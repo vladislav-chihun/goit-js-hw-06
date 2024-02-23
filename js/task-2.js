@@ -1,17 +1,20 @@
-class storage  {
+class Storage  {
     #items
+
     constructor(items) {
-        this.#items = items
+        this.#items = items;
     }
-    get Items() {
-        return this.#items
+    getItems() {
+        return this.#items;
     }
 
-    set Item(newItem) {
+    addItem(newItem) {
         this.#items.push(newItem)
     }
-    set Item(itemToRemove) {
-        this.#items = this.#items.slice(indexOf(itemToRemove))
+    removeItem(itemToRemove) {
+        const index = this.#items.indexOf(itemToRemove);
+        if (index !== -1)
+            this.#items.splice(index, 1);
     }
 }
 
